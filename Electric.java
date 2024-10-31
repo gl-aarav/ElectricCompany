@@ -100,7 +100,8 @@ public class Electric
 		if (billType.equals("R")) 
 		{
 			cost = 12.00 + (0.095 * hours);
-		} else if (billType.equals("C")) 
+		} 
+		else if (billType.equals("C")) 
 		{
 			if (hours <= 1000) 
 			{
