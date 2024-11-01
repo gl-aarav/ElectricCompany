@@ -82,28 +82,28 @@
 			Scanner in = new Scanner(System.in); // Create a Scanner object for input
 	
 			// Get bill type from user input
-			System.out.printf("Enter the type of electric bill, R for residential, C for commercial, I for industrial -> ");
+			System.out.printf("\n\n\nEnter the type of electric bill, R for residential, C for commercial, I for industrial -> ");
 			billType = in.nextLine(); // Read the bill type input
 	
 			// Get hours based on bill type
 			if (billType.equals("R")) 
 			{
 				// Prompt for hours if Residential
-				System.out.printf("Enter the number of kilowatt hours of electricity used%36s","-> ");
+				System.out.printf("%-87s%s","Enter the number of kilowatt hours of electricity used","-> ");
 				hours = in.nextDouble(); // Read hours for Residential
 			} 
 			else if (billType.equals("C")) 
 			{
 				// Prompt for hours if Commercial
-				System.out.printf("Enter the number of kilowatt hours of electricity used%36s","-> ");
+				System.out.printf("%-87s%s","Enter the number of kilowatt hours of electricity used","-> ");
 				hours = in.nextDouble(); // Read hours for Commercial
 			} 
 			else if (billType.equals("I")) 
 			{
 				// Prompt for peak and off-peak hours if Industrial
-				System.out.printf("Enter the number of kilowatt hours of electricity used during peak hours%18s","-> ");
+				System.out.printf("%-87s%s","Enter the number of kilowatt hours of electricity used during peak hours","-> ");
 				peakHours = in.nextDouble(); // Read peak hours for Industrial
-				System.out.printf("Enter the number of kilowatt hours of electricity used during off-peak hours%14s","-> ");
+				System.out.printf("%-87s%s","Enter the number of kilowatt hours of electricity used during off-peak hours","-> ");
 				offPeakHours = in.nextDouble(); // Read off-peak hours for Industrial
 			}
 		
@@ -164,7 +164,7 @@
 		{
 			if (hours < 0 || peakHours < 0 || offPeakHours < 0)
 			{
-				System.out.println("\n\nPlease enter a positive number of hours."); // Prompt error message
+				System.out.println("\n\nPlease enter a positive number of hours.\n\n\n"); // Prompt error message
 			}
 			else
 			{
@@ -172,22 +172,22 @@
 				if (billType.equals("R")) 
 				{
 					// Display information for Residential Bill
-					System.out.printf("\n\n\nResidential Bill\n\nPeak Hours: %11.2f \nCost %13.10s%.2f\n", hours, "$", cost);
+					System.out.printf("\n\n\nResidential Bill\n\nPeak Hours: %11.2f \nCost %13.10s%.2f\n\n\n\n", hours, "$", cost);
 				} 
 				else if (billType.equals("C")) 
 				{
 					// Display information for Commercial Bill
-					System.out.printf("\n\n\nCommercial Bill\n\nHours: %16.2f \nCost %12s%.2f\n", hours, "$", cost);
+					System.out.printf("\n\n\nCommercial Bill\n\nHours: %16.2f \nCost %12s%.2f\n\n\n\n", hours, "$", cost);
 				}
 				else if (billType.equals("I")) 
 				{
 					// Display information for Industrial Bill
-					System.out.printf("\n\n\nIndustrial Bill\n\nPeak Hours: %17.2f\nOff-Peak Hours: %13.2f \nCost %18.10s%.2f\n", peakHours, offPeakHours, "$", cost);
+					System.out.printf("\n\n\nIndustrial Bill\n\nPeak Hours: %17.2f\nOff-Peak Hours: %13.2f \nCost %18.10s%.2f\n\n\n\n", peakHours, offPeakHours, "$", cost);
 				}
 					else
 				{
 					// Handle invalid bill type input
-					System.out.println("\n\n\nError, please try again."); // Error message for invalid input
+					System.out.println("\n\n\nError, please try again.\n\n\n"); // Error message for invalid input
 				}
 			}	
 		}
