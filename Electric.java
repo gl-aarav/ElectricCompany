@@ -1,3 +1,4 @@
+
 /*
  * Aarav Goyal
  * 10/30/24
@@ -100,11 +101,7 @@ public class Electric
 			System.out.printf("Enter the number of kilowatt hours of electricity used during off-peak hours%14s","-> ");
 			offPeakHours = in.nextDouble(); // Read off-peak hours for Industrial
 		}
-		else
-		{
-			// Handle invalid bill type input
-			System.out.println("\n\n\nError, please try again."); // Error message for invalid input
-		}
+	
 
 		in.close(); // Close the scanner to prevent resource leaks
 	}
@@ -175,6 +172,11 @@ public class Electric
 		{
 			// Display information for Industrial Bill
 			System.out.printf("\n\n\nIndustrial Bill\n\nPeak Hours: %17.2f\nOff-Peak Hours: %13.2f \nCost %18.10s%.2f\n", peakHours, offPeakHours, "$", cost);
+		}
+			else
+		{
+			// Handle invalid bill type input
+			System.out.println("\n\n\nError, please try again."); // Error message for invalid input
 		}	
 	}
 }
