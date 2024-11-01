@@ -41,6 +41,10 @@
 		private double peakHours; // Peak hours for Industrial
 		private double offPeakHours; // Off-peak hours for Industrial
 		private double cost; // Total cost of the electric bill
+		final private double conversionRateR;
+		final private double conversionRateC;
+		final private double conversionRatePeakHours;
+		final private double conversionRateOffPeakHours;
 	
 		// Constructor initializes variables to default values
 		public Electric() 
@@ -50,6 +54,10 @@
 			peakHours = 0.0; // Initialize peak hours to zero for Industrial
 			offPeakHours = 0.0; // Initialize off-peak hours to zero for Industrial
 			cost = 0.0; // Initialize cost to zero
+		    conversionRateR = 0.095;
+			conversionRateC = 0.083;
+			conversionRatePeakHours = 0.109;
+			conversionRateOffPeakHours = 0.047;
 		}
 	
 		// Main method to start the program
@@ -57,7 +65,7 @@
 		{
 			Electric electric = new Electric(); // Create an instance of Electric
 			electric.computeIt(); // Start the computation process
-		}
+		}	
 	
 		// Method to control the flow of data collection and cost calculation
 		public void computeIt() 
@@ -110,7 +118,7 @@
 			if (billType.equals("R")) 
 			{
 				// Calculate cost for Residential
-				cost = 12.00 + (0.095 * hours); // Base fee plus variable cost per hour
+				cost = 12.00 + (conversionRateR * hours); // Base fee plus variable cost per hour
 			} 
 			else if (billType.equals("C")) 
 			{
@@ -121,7 +129,7 @@
 				} 
 				else
 				{
-					cost = 120.00 + (0.083 * (hours - 1000)); // Additional cost for excess hours
+					cost = 120.00 + (conversionRateC * (hours - 1000)); // Additional cost for excess hours
 				}
 	
 			} 
@@ -135,7 +143,7 @@
 				} 
 				else
 				{
-					peakCost = 152.00 + (0.109 * (peakHours - 1000)); // Additional cost for excess peak hours
+					peakCost = 152.00 + (conversionRatePeakHours * (peakHours - 1000)); // Additional cost for excess peak hours
 				}
 	
 				double offPeakCost = 0.0;
@@ -145,7 +153,7 @@
 				} 
 				else
 				{
-					offPeakCost = 108.00 + (0.047 * (offPeakHours - 1000)); // Additional cost for excess off-peak hours
+					offPeakCost = 108.00 + (0.047 * (conversionRateOffPeakHours - 1000)); // Additional cost for excess off-peak hours
 				}
 				cost = peakCost + offPeakCost; // Total cost for Industrial
 			}
@@ -184,4 +192,3 @@
 			}	
 		}
 	}
-	
