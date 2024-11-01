@@ -41,36 +41,41 @@ public class Electric
 	private double offPeakHours; // Off-peak hours for Industrial
 	private double cost; // Total cost of the electric bill
 
+	// Constructor initializes variables to default values
 	public Electric() 
 	{
-		billType = new String(""); // Type of electric bill (Residential, Commercial, Industrial)
-		hours = 0.0; // Total hours for Residential and Commercial
-		peakHours = 0.0; // Peak hours for Industrial
-		offPeakHours = 0.0; // Off-peak hours for Industrial
-		cost = 0.0; // Total cost of the electric bill
+		billType = new String(""); // Initialize bill type to an empty string
+		hours = 0.0; // Initialize hours to zero for Residential and Commercial
+		peakHours = 0.0; // Initialize peak hours to zero for Industrial
+		offPeakHours = 0.0; // Initialize off-peak hours to zero for Industrial
+		cost = 0.0; // Initialize cost to zero
 	}
 
+	// Main method to start the program
 	public static void main(String[] args) 
 	{
 		Electric electric = new Electric(); // Create an instance of Electric
 		electric.computeIt(); // Start the computation process
 	}
 
+	// Method to control the flow of data collection and cost calculation
 	public void computeIt() 
 	{
 		getData(); // Gather input data from the user
 		calculateCost(); // Calculate the cost based on input
-		if (hours<0 || peakHours<0 || offPeakHours<0)
-			System.out.println("\n\nPlease enter a positive number of hours.");
+		// Check if hours, peakHours, or offPeakHours are negative
+		if (hours < 0 || peakHours < 0 || offPeakHours < 0)
+			System.out.println("\n\nPlease enter a positive number of hours."); // Prompt error message
 		else
 			printInfo(); // Display the calculated bill information
 	}
 
+	// Method to collect user input for bill type and hours
 	public void getData() 
 	{
 		Scanner in = new Scanner(System.in); // Create a Scanner object for input
 
-		// Get bill type
+		// Get bill type from user input
 		System.out.printf("Enter the type of electric bill, R for residential, C for commercial, I for industrial -> ");
 		billType = in.nextLine(); // Read the bill type input
 
@@ -79,38 +84,39 @@ public class Electric
 		{
 			// Prompt for hours if Residential
 			System.out.printf("Enter the number of kilowatt hours of electricity used%36s","-> ");
-			hours = in.nextDouble();
+			hours = in.nextDouble(); // Read hours for Residential
 		} 
 		else if (billType.equals("C")) 
 		{
 			// Prompt for hours if Commercial
 			System.out.printf("Enter the number of kilowatt hours of electricity used%36s","-> ");
-			hours = in.nextDouble();
+			hours = in.nextDouble(); // Read hours for Commercial
 		} 
 		else if (billType.equals("I")) 
 		{
 			// Prompt for peak and off-peak hours if Industrial
 			System.out.printf("Enter the number of kilowatt hours of electricity used during peak hours%18s","-> ");
-			peakHours = in.nextDouble();
+			peakHours = in.nextDouble(); // Read peak hours for Industrial
 			System.out.printf("Enter the number of kilowatt hours of electricity used during off-peak hours%14s","-> ");
-			offPeakHours = in.nextDouble();
+			offPeakHours = in.nextDouble(); // Read off-peak hours for Industrial
 		}
 		else
 		{
 			// Handle invalid bill type input
-			System.out.println("\n\n\nError, please try again.");
+			System.out.println("\n\n\nError, please try again."); // Error message for invalid input
 		}
 
-		in.close();
+		in.close(); // Close the scanner to prevent resource leaks
 	}
 
+	// Method to calculate the cost based on bill type and hours
 	public void calculateCost() 
 	{
 		// Calculate the cost based on the type of bill
 		if (billType.equals("R")) 
 		{
 			// Calculate cost for Residential
-			cost = 12.00 + (0.095 * hours);
+			cost = 12.00 + (0.095 * hours); // Base fee plus variable cost per hour
 		} 
 		else if (billType.equals("C")) 
 		{
@@ -151,19 +157,23 @@ public class Electric
 		}
 	}
 
+	// Method to print the calculated information based on bill type
 	public void printInfo() 
 	{
 		// Print the calculated information based on bill type
 		if (billType.equals("R")) 
 		{
+			// Display information for Residential Bill
 			System.out.printf("\n\n\nResidential Bill\n\nPeak Hours: %11.2f \nCost %13.10s%.2f\n", hours, "$", cost);
 		} 
 		else if (billType.equals("C")) 
 		{
+			// Display information for Commercial Bill
 			System.out.printf("\n\n\nCommercial Bill\n\nHours: %16.2f \nCost %12s%.2f\n", hours, "$", cost);
 		} 
 		else if (billType.equals("I")) 
 		{
+			// Display information for Industrial Bill
 			System.out.printf("\n\n\nIndustrial Bill\n\nPeak Hours: %17.2f\nOff-Peak Hours: %13.2f \nCost %18.10s%.2f\n", peakHours, offPeakHours, "$", cost);
 		}	
 	}
