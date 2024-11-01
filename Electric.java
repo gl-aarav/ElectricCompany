@@ -54,10 +54,10 @@
 			peakHours = 0.0; // Initialize peak hours to zero for Industrial
 			offPeakHours = 0.0; // Initialize off-peak hours to zero for Industrial
 			cost = 0.0; // Initialize cost to zero
-		    conversionRateR = 0.095;
-			conversionRateC = 0.083;
-			conversionRatePeakHours = 0.109;
-			conversionRateOffPeakHours = 0.047;
+		    conversionRateR = 0.095;  // Initialize conversionRateR to 0.095
+			conversionRateC = 0.083;  // Initialize conversionRateC to 0.083
+			conversionRatePeakHours = 0.109; // Initialize conversionRatePeakHours to 0.109
+			conversionRateOffPeakHours = 0.047; // Initialize conversionRateOffPeakHours to 0.047
 		}
 	
 		// Main method to start the program
