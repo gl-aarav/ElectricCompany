@@ -65,10 +65,7 @@ public class Electric
 		getData(); // Gather input data from the user
 		calculateCost(); // Calculate the cost based on input
 		// Check if hours, peakHours, or offPeakHours are negative
-		if (hours < 0 || peakHours < 0 || offPeakHours < 0)
-			System.out.println("\n\nPlease enter a positive number of hours."); // Prompt error message
-		else
-			printInfo(); // Display the calculated bill information
+		printInfo(); // Display the calculated bill information
 	}
 
 	// Method to collect user input for bill type and hours
@@ -157,26 +154,33 @@ public class Electric
 	// Method to print the calculated information based on bill type
 	public void printInfo() 
 	{
-		// Print the calculated information based on bill type
-		if (billType.equals("R")) 
+		if (hours < 0 || peakHours < 0 || offPeakHours < 0)
 		{
-			// Display information for Residential Bill
-			System.out.printf("\n\n\nResidential Bill\n\nPeak Hours: %11.2f \nCost %13.10s%.2f\n", hours, "$", cost);
-		} 
-		else if (billType.equals("C")) 
-		{
-			// Display information for Commercial Bill
-			System.out.printf("\n\n\nCommercial Bill\n\nHours: %16.2f \nCost %12s%.2f\n", hours, "$", cost);
-		} 
-		else if (billType.equals("I")) 
-		{
-			// Display information for Industrial Bill
-			System.out.printf("\n\n\nIndustrial Bill\n\nPeak Hours: %17.2f\nOff-Peak Hours: %13.2f \nCost %18.10s%.2f\n", peakHours, offPeakHours, "$", cost);
+			System.out.println("\n\nPlease enter a positive number of hours."); // Prompt error message
 		}
-			else
+		else
 		{
-			// Handle invalid bill type input
-			System.out.println("\n\n\nError, please try again."); // Error message for invalid input
+			// Print the calculated information based on bill type
+			if (billType.equals("R")) 
+			{
+				// Display information for Residential Bill
+				System.out.printf("\n\n\nResidential Bill\n\nPeak Hours: %11.2f \nCost %13.10s%.2f\n", hours, "$", cost);
+			} 
+			else if (billType.equals("C")) 
+			{
+				// Display information for Commercial Bill
+				System.out.printf("\n\n\nCommercial Bill\n\nHours: %16.2f \nCost %12s%.2f\n", hours, "$", cost);
+			} 
+			else if (billType.equals("I")) 
+			{
+				// Display information for Industrial Bill
+				System.out.printf("\n\n\nIndustrial Bill\n\nPeak Hours: %17.2f\nOff-Peak Hours: %13.2f \nCost %18.10s%.2f\n", peakHours, offPeakHours, "$", cost);
+			}
+				else
+			{
+				// Handle invalid bill type input
+				System.out.println("\n\n\nError, please try again."); // Error message for invalid input
+			}
 		}	
 	}
 }
