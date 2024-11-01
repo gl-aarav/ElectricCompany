@@ -41,10 +41,10 @@
 		private double peakHours; // Peak hours for Industrial
 		private double offPeakHours; // Off-peak hours for Industrial
 		private double cost; // Total cost of the electric bill
-		final private double conversionRateR; //Conversion Rate for Residential
-		final private double conversionRateC; //Conversion Rate for Commercial
-		final private double conversionRatePeakHours; //Conversion Rate for PeakHours
-		final private double conversionRateOffPeakHours; //Conversion Rate for OffPeakHours
+		private final double conversionRateR; //Conversion Rate for Residential
+		private final double conversionRateC; //Conversion Rate for Commercial
+		private final double conversionRatePeakHours; //Conversion Rate for PeakHours
+		private final double conversionRateOffPeakHours; //Conversion Rate for OffPeakHours
 	
 		// Constructor initializes variables to default values
 		public Electric() 
