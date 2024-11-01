@@ -160,7 +160,7 @@ public class Electric
 		} 
 		else if (billType.equals("C")) 
 		{
-			System.out.printf("\n\n\nCommercial Bill\n\nHours: %17.2f \nCost %12s%.2f\n", hours, "$", cost);
+			System.out.printf("\n\n\nCommercial Bill\n\nHours: %16.2f \nCost %12s%.2f\n", hours, "$", cost);
 		} 
 		else if (billType.equals("I")) 
 		{
