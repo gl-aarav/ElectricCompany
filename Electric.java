@@ -172,17 +172,17 @@ public class Electric
 			if (billType.equals("R")) 
 			{
 				// Display information for Residential Bill
-				System.out.printf("\n\n\nResidential Bill\n\n%-20s%,.2f \n%-20s%s%,.2f\n\n\n\n", "Peak Hours", hours,"Cost", "$", cost);
+				System.out.printf("\n\n\nResidential Bill\n\n%-20s%,.2f \n%-19s%s%,.2f\n\n\n\n", "Peak Hours", hours,"Cost", "$", cost);
 			} 
 			else if (billType.equals("C")) 
 			{
 				// Display information for Commercial Bill
-				System.out.printf("\n\n\nCommercial Bill\n\n%-20s%,.2f \n%-20s%s%,.2f\n\n\n\n", "Peak Hours", hours,"Cost", "$", cost);
+				System.out.printf("\n\n\nCommercial Bill\n\n%-20s%,.2f \n%-19s%s%,.2f\n\n\n\n", "Peak Hours", hours,"Cost", "$", cost);
 			}
 			else if (billType.equals("I")) 
 			{
 				// Display information for Industrial Bill
-				System.out.printf("\n\n\nIndustrial Bill\n\n%-20s%,.2f\n%-20s%,.2f\n%-20s%s%,.2f\n\n\n\n","Peak Hours", peakHours, "Off-Peak Hours", offPeakHours, "Cost", "$", cost);
+				System.out.printf("\n\n\nIndustrial Bill\n\n%-20s%,.2f\n%-20s%,.2f\n%-19s%s%,.2f\n\n\n\n","Peak Hours", peakHours, "Off-Peak Hours", offPeakHours, "Cost", "$", cost);
 			}
 			else
 			{
