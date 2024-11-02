@@ -153,7 +153,7 @@ public class Electric
 			} 
 			else
 			{
-				offPeakCost = 108.00 + (0.047 * (conversionRateOffPeakHours - 1000)); // Additional cost for excess off-peak hours
+				offPeakCost = 108.00 + (conversionRateOffPeakHours * (offPeakHours - 1000)); // Additional cost for excess off-peak hours
 			}
 			cost = peakCost + offPeakCost; // Total cost for Industrial
 		}
