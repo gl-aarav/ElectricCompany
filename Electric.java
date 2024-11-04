@@ -1,4 +1,3 @@
-
 /*
  * Aarav Goyal
  * 10/30/24
@@ -41,10 +40,10 @@ public class Electric
 	private double peakHours; // Peak hours for Industrial
 	private double offPeakHours; // Off-peak hours for Industrial
 	private double cost; // Total cost of the electric bill
-	private final double conversionRateR; //Conversion Rate for Residential
-	private final double conversionRateC; //Conversion Rate for Commercial
-	private final double conversionRatePeakHours; //Conversion Rate for PeakHours
-	private final double conversionRateOffPeakHours; //Conversion Rate for OffPeakHours
+	private final double conversionRateR; // Conversion Rate for Residential
+	private final double conversionRateC; // Conversion Rate for Commercial
+	private final double conversionRatePeakHours; // Conversion Rate for PeakHours
+	private final double conversionRateOffPeakHours; // Conversion Rate for OffPeakHours
 
 	// Constructor initializes variables to default values
 	public Electric() 
@@ -172,17 +171,17 @@ public class Electric
 			if (billType.equals("R")) 
 			{
 				// Display information for Residential Bill
-				System.out.printf("\n\n\nResidential Bill\n\n%-20s%,.2f \n%-19s%s%,.2f\n\n\n\n", "Peak Hours", hours,"Cost", "$", cost);
+				System.out.printf("\n\n\nResidential Bill\n\n%-20s%,.2f \n%-20s%s%,.2f\n\n\n\n", "Peak Hours", hours,"Cost", "$", cost);
 			} 
 			else if (billType.equals("C")) 
 			{
 				// Display information for Commercial Bill
-				System.out.printf("\n\n\nCommercial Bill\n\n%-20s%,.2f \n%-19s%s%,.2f\n\n\n\n", "Peak Hours", hours,"Cost", "$", cost);
+				System.out.printf("\n\n\nCommercial Bill\n\n%-20s%,.2f \n%-20s%s%,.2f\n\n\n\n", "Peak Hours", hours,"Cost", "$", cost);
 			}
 			else if (billType.equals("I")) 
 			{
 				// Display information for Industrial Bill
-				System.out.printf("\n\n\nIndustrial Bill\n\n%-20s%,.2f\n%-20s%,.2f\n%-19s%s%,.2f\n\n\n\n","Peak Hours", peakHours, "Off-Peak Hours", offPeakHours, "Cost", "$", cost);
+				System.out.printf("\n\n\nIndustrial Bill\n\n%-20s%,.2f\n%-20s%,.2f\n%-20s%s%,.2f\n\n\n\n","Peak Hours", peakHours, "Off-Peak Hours", offPeakHours, "Cost", "$", cost);
 			}
 			else
 			{
